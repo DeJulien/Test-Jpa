@@ -22,9 +22,9 @@ public class Emprunt {
 	@Id
 	private int id;
 	@Temporal(TemporalType.DATE)
-	private Date DATE_DEBUT;
+	private Date date_Debut;
 	@Temporal(TemporalType.DATE)
-	private Date DATE_FIN;
+	private Date date_Fin;
 	@Column(name = "delai", length = 255, nullable = false, unique = true)
 	private int delais;
 
@@ -59,7 +59,7 @@ public class Emprunt {
 	 * @return the dateDebut
 	 */
 	public Date getDateDebut() {
-		return DATE_DEBUT;
+		return date_Debut;
 	}
 
 
@@ -67,7 +67,7 @@ public class Emprunt {
 	 * @param dateDebut the dateDebut to set
 	 */
 	public void setDateDebut(Date dateDebut) {
-		this.DATE_DEBUT = dateDebut;
+		this.date_Debut = dateDebut;
 	}
 
 
@@ -75,7 +75,7 @@ public class Emprunt {
 	 * @return the dateFin
 	 */
 	public Date getDateFin() {
-		return DATE_FIN;
+		return date_Fin;
 	}
 
 
@@ -83,7 +83,7 @@ public class Emprunt {
 	 * @param dateFin the dateFin to set
 	 */
 	public void setDateFin(Date dateFin) {
-		this.DATE_FIN = dateFin;
+		this.date_Fin = dateFin;
 	}
 
 
