@@ -1,8 +1,11 @@
-package fr.diginamic.jpa.model;
+package fr.diginamic.jpa.banque;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Embeddable
+@Table(name="Adresse")
 public class Adresse {
 	
 	@Id
@@ -16,9 +19,5 @@ public class Adresse {
 	@Column(name = "VILLE", length = 255, nullable = false, unique = true)
 	private String ville;
 	
-	public Adresse()
-	{
-		
-	}
 
 }

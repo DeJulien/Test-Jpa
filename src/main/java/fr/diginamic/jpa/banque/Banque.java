@@ -1,9 +1,14 @@
-package fr.diginamic.jpa.model;
+package fr.diginamic.jpa.banque;
+
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="Banque")
 public class Banque {
 
 	@Id
@@ -12,7 +17,7 @@ public class Banque {
 	private String nom;
 	
 	@OneToMany(mappedBy="banque")
-	private Client client; 
+	private List<Client> client; 
 	
 	public Banque()
 	{

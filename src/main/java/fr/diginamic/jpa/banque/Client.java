@@ -1,15 +1,19 @@
-package fr.diginamic.jpa.model;
+package fr.diginamic.jpa.banque;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="Client")
 public class Client {
 	
 	@Id
@@ -18,8 +22,10 @@ public class Client {
 	private String nom;
 	@Column(name = "PRENOM", length = 255, nullable = false, unique = true)
 	private String prenom;
+	@Column(name = "DATE_DE_NAISSANCE")
+    private LocalDate dateDeNaissance;
 	
-	@OneToOne
+	@Embedded
 	private Adresse adresse; 
 	
 	@ManyToOne
@@ -27,8 +33,8 @@ public class Client {
 	private Banque banque; 
 	
 	@ManyToMany
-	@JoinTable(name="COMPO",joinColumns= @JoinColumn(name="ID_COMP", referencedColumnName="ID"),
-			inverseJoinColumns= @JoinColumn(name="ID_CLI", referencedColumnName="ID"))
+	@JoinTable(name="COMPO",joinColumns= @JoinColumn(name="ID_CLI", referencedColumnName="ID"),
+			inverseJoinColumns= @JoinColumn(name="ID_COMP", referencedColumnName="ID"))
 	private List<Compte> compte;
 	
 	public Client()
