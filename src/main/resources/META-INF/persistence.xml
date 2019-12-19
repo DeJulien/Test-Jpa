@@ -27,11 +27,14 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 
 <persistence-unit name="banque" transaction-type="RESOURCE_LOCAL">
 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-<class>banque.entite.Banque</class>
-<class>banque.entite.Client</class>
-<class>banque.entite.Compte</class>
-<class>banque.entite.Operation</class>
-<class>banque.entite.Adresse</class>
+<class>fr.diginamic.jpa.banque.Banque</class>
+<class>fr.diginamic.jpa.banque.Client</class>
+<class>fr.diginamic.jpa.banque.Compte</class>
+<class>fr.diginamic.jpa.banque.Operation</class>
+<class>fr.diginamic.jpa.banque.Adresse</class>
+<class>fr.diginamic.jpa.banque.LivretA</class>
+<class>fr.diginamic.jpa.banque.AssuranceVie</class>
+<class>fr.diginamic.jpa.banque.Virement</class>
 <properties>
 <property name="hibernate.archive.autodetection" value="" />
 <property name="hibernate.hbm2ddl.auto" value="update"/>
@@ -40,7 +43,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 <property name="javax.persistence.jdbc.user" value="root" />
 <property name="javax.persistence.jdbc.password" value="" />
 <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
-<property name="hibernate.show_sql" value="false" />
+<property name="hibernate.show_sql" value="true" />
 </properties>
 </persistence-unit>
 
